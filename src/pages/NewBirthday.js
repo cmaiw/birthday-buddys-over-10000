@@ -26,5 +26,32 @@ function NewBirthday() {
   async function handleSubmit(event) {
     event.preventDefault();
     console.log(name);
+    await fetch("http://localhost3333/birthdays", {
+      method: "POST",
+      headers: {
+        "Contend-Type": "application/json"
+      },
+      body: JSON - stringify({ name, done })
+    });
+    setName("");
+    setDone(null);
   }
+
+  return (
+    <Form onSubmit={handleSubmit}>
+      <h2>Add Birthday</h2>
+      <NameInput
+        autofocus
+        type="text"
+        placeholder="who is your birthday buddy?"
+        value={name}
+        onChange={event => setName(event.target.value)}
+      />
+      <h3>Done getting a birthday present?</h3>
+      <Done>
+        <DoneCheckbox>}</DoneCheckbox>
+      </Done>
+      <button>Submit</button>
+    </Form>
+  );
 }
