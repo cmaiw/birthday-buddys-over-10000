@@ -15,8 +15,14 @@ const Done = styled.div`
   margin-bottom: 20px;
 `;
 
-const DoneCheckbox = styled.checkbox`
-  background: whitesmoke;
+const CheckboxContainer = styled.div`
+  height: 50px;
+  color: black;
+`;
+
+const StyledCheckbox = styled.checkbox`
+  width: 20px;
+  height: 20px;
 `;
 
 function NewBirthday() {
@@ -31,11 +37,17 @@ function NewBirthday() {
       headers: {
         "Contend-Type": "application/json"
       },
-      body: JSON - stringify({ name, done })
+      body: JSON.stringify({ name, done })
     });
     setName("");
     setDone(null);
   }
+
+  const DoneCheckbox = ({ className, checked, ...props }) => (
+    <CheckboxContainer className={done}>
+      <StyledCheckbox checked={checked} />
+    </CheckboxContainer>
+  );
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -49,9 +61,11 @@ function NewBirthday() {
       />
       <h3>Done getting a birthday present?</h3>
       <Done>
-        <DoneCheckbox>}</DoneCheckbox>
+        <DoneCheckbox />
       </Done>
       <button>Submit</button>
     </Form>
   );
 }
+
+export default NewBirthday;

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "@emotion/styled";
 import GlobalStyles from "./GlobalStyles";
 import NavBar from "./components/NavBar";
+import NewBirthday from "./pages/NewBirthday";
 
 const Header = styled.header`
   display: flex;
@@ -42,7 +43,7 @@ function App() {
               Home
             </Route>
             <Route exact path="/add">
-              Add
+              <NewBirthday />
             </Route>
           </Switch>
         </Main>
