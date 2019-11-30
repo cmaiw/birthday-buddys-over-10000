@@ -15,10 +15,18 @@ const Header = styled.header`
   background-color: grey;
 `;
 
-const Main = styled.main`
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
+`;
+
+const Main = styled.main`
   display: flex;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -36,20 +44,22 @@ function App() {
     <>
       <GlobalStyles />
       <Router>
-        <Header>Header</Header>
-        <Main>
-          <Switch>
-            <Route exact path="/">
-              Home
-            </Route>
-            <Route exact path="/add">
-              <NewBirthday />
-            </Route>
-          </Switch>
-        </Main>
-        <Footer>
-          <NavBar />
-        </Footer>
+        <Container>
+          <Header>Header</Header>
+          <Main>
+            <Switch>
+              <Route exact path="/">
+                Home
+              </Route>
+              <Route exact path="/add">
+                <NewBirthday />
+              </Route>
+            </Switch>
+          </Main>
+          <Footer>
+            <NavBar />
+          </Footer>
+        </Container>
       </Router>
     </>
   );
