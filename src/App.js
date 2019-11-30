@@ -1,6 +1,8 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "@emotion/styled";
 import GlobalStyles from "./GlobalStyles";
+import NavBar from "./components/NavBar";
 
 const Header = styled.header`
   display: flex;
@@ -32,9 +34,22 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Header>Header</Header>
-      <Main>Main</Main>
-      <Footer>Footer</Footer>
+      <Router>
+        <Header>Header</Header>
+        <Main>
+          <Switch>
+            <Route exact path="/">
+              Home
+            </Route>
+            <Route exact path="/add">
+              Add
+            </Route>
+          </Switch>
+        </Main>
+        <Footer>
+          <NavBar />
+        </Footer>
+      </Router>
     </>
   );
 }
