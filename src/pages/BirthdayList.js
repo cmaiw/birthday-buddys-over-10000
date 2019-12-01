@@ -21,7 +21,7 @@ function BirthdayList() {
           key={birthday.id}
           name={birthday.name}
           date={birthday.date}
-          note={birthday.note}
+          present={birthday.present}
         />
       ))}
     </div>

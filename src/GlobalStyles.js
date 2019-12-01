@@ -16,6 +16,7 @@ export default function GlobalStyles() {
           width: 100vw;
           display: flex;
           margin: 0;
+          font-family: "Tajawal", sans-serif;
         }
       `}
     />
